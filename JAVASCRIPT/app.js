@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '035e89a3e5mshf26611e82fd40b8p1281bejsnfec8333840b7',
+                'X-RapidAPI-Key': '',
                 'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
             }
         };
