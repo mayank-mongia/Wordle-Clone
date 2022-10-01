@@ -1,0 +1,189 @@
+:root {
+    --incorrect-pos-tile: #b59f3b;
+    --correct-pos-tile: #538d4e;
+    --incorrect-tile: #3a3a3c;
+    --font-color: #fff;
+    --bg-color: #121213;
+    --key-bg-color: #818384;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#container {
+    height: 100%;
+    background-color: var(--bg-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    display: flex;    
+    flex-direction: column;
+}
+
+
+/* PAGE TITLE */
+header {
+    border-bottom: 1px solid var(--key-bg-color);
+}
+
+#title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--font-color);
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+
+/* SQUARES */
+#board-container {
+    justify-content: center;
+    margin: 4rem;
+    display: flex;
+}
+
+#board {
+    align-self: start;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.square {
+    color: var(--font-color);
+    border: 1px solid var(--key-bg-color);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* KEYBOARD */
+#keyboard-container {
+    height: 200px;
+}
+
+.keyboard-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 2px;
+}
+
+.keyboard-row button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: var(--key-bg-color);
+    color: var(--font-color);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 8px;
+    user-select: none;
+}
+
+.spacer-half {
+    flex-grow: .5;
+    visibility: hidden;
+}
+
+.wide-button {
+    flex-grow: 1.5;
+}
+
+
+
+/* WINNING CARD */
+#won-card {
+    align-self: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--incorrect-tile);
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    z-index: 999;
+    border-radius: 10px;
+    background-color: var(--);
+    visibility: hidden;
+}
+
+
+#won-card h1 {
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 992px){
+    .square {
+        min-width: 50px;
+        min-height: 50px;
+    }
+    #keyboard-container {
+        height: 150px;
+        padding: 0 10px;
+    }
+
+    .keyboard-row button {
+        flex-grow: .1;
+        height: 50px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .square {
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+
+    #keyboard-container {
+        height: 100px;
+        padding: 0 10px;
+    }
+
+    .keyboard-row button {
+        flex-grow: .1;
+        height: 40px;
+    }
+}
